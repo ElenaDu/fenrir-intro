@@ -1,0 +1,70 @@
+html {
+    font-family: 'Inter', sans-serif;
+}
+
+
+
+section {
+    margin-left: 7% ;
+    margin-right: 7%;
+    margin-bottom: 2%;
+}
+
+h1 {
+    margin-left: 7%;    
+}
+
+h2 {
+    color: #f6b213;       
+}
+
+#about {
+    padding-bottom: 7%;
+}
+
+#hello {
+    color: #f6b213;
+    font-size: large;
+}
+
+#ul_experience li {
+    margin: 1%;   
+}
+
+img {
+    width: 15%;
+    height: 20%;
+    float: left;
+    margin-right: 2%;   
+}
+
+label {
+    font-size: large;    
+}
+
+input {
+    margin-bottom: 1%;
+    margin-top: 0.5%;
+    padding: 0.5%;
+    font-size: medium;
+}
+
+textarea {
+    padding: 0.5%;
+    margin-top: 0.5%;
+    margin-bottom: 0.5%;
+    font-size: medium;
+    width: 25%;   
+}
+
+button {
+    font-size: large;
+    padding: 0.5%;
+    background-color: #f3d898;
+    border-color: #f6b213;
+}
+
+#footer {
+    background-color: #ffd166;
+    text-align: center;
+}
