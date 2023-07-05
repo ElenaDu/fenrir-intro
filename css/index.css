@@ -1,65 +1,155 @@
-html {
-    font-family: 'Inter', sans-serif;
+* {
+    box-sizing: border-box;
 }
 
+/*Change <body> layout as Flexbox container. */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: 'Inter', sans-serif;
 
+}
 
-section {
-    margin-left: 7% ;
+/*Change the layout of the Header using Flexbox. Add style and color.*/
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #b8e4f5;
+    margin-left: 7%;
     margin-right: 7%;
-    margin-bottom: 2%;
+    margin-bottom: auto;
+    height: 60px;
+}
+
+.main-nav,
+.name {
+    margin: 1%;
+}
+
+/*Using Flexbox change layout for the navigation menu*/
+.nav-items {
+    display: flex;
+    justify-content: flex-end;
+
+}
+
+/*Add margin to the navigation items*/
+.nav-item {
+    margin: 2%;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    text-decoration: underline #e5a308;
+}
+
+/*add margin to the page */
+section {
+    margin-left: 7%;
+    margin-right: 7%;
+
 }
 
 h1 {
-    margin-left: 7%;    
-}
-
-h2 {
-    color: #f6b213;       
-}
-
-#about {
-    padding-bottom: 7%;
-}
-
-#hello {
-    color: #f6b213;
     font-size: large;
 }
 
-#ul_experience li {
-    margin: 1%;   
+h2 {
+    color: #f5ad04;
+    margin-bottom: 0.5%;
 }
 
+/*Add color and style to the welcome message*/
+#hello {
+    color: #f3ab04;
+    font-size: large;
+}
+
+
+/*Change the layout of the "Experience" section using Flexbox*/
+#ul_experience {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+}
+
+/*Add margin 0.5% to each experience item*/
+.experience_item {
+    margin-bottom: 1.5%;
+}
+
+/*Add underline decoration to the job positions*/
+.experience_item span {
+    text-decoration: underline #e5a308;
+}
+
+/*Change the layout of the "Skills" section using Flexbox*/
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/*Add border to the each skill item */
+.skills_item {
+    border: solid 2px #e5a308;
+    padding: 0.5%;
+    margin: 0.5%;
+
+
+}
+
+/*Add style and set size to the profile picture*/
 img {
-    width: 15%;
-    height: 20%;
-    float: left;
-    margin-right: 2%;   
+    width: 25%;
+    height: auto;
+    float: right;
+    margin-left: 7%;
+    margin-top: auto;
+    border: solid 3px #e5a308;
+
+}
+
+/*Change the layout of the "Leave a Message" form using Flexbox*/
+.form-flex {
+    display: flex;
+    flex-direction: column;
 }
 
 label {
-    font-size: large;    
+    font-size: large;
+}
+
+.message-item {
+    margin-top: 0.5%;
+    padding: 0.5%;
+
 }
 
 input {
-    margin-bottom: 1%;
-    margin-top: 0.5%;
+    width: 20%;
     padding: 0.5%;
-    font-size: medium;
 }
 
+
 textarea {
+    width: 30%;
     padding: 0.5%;
-    margin-top: 0.5%;
-    margin-bottom: 0.5%;
-    font-size: medium;
-    width: 25%;   
 }
 
 button {
     font-size: large;
-    padding: 0.5%;
     background-color: #f3d898;
     border-color: #f6b213;
 }
@@ -67,4 +157,38 @@ button {
 #footer {
     background-color: #ffd166;
     text-align: center;
+    margin-top: auto;
+}
+
+/*For this project I assume that mobile phones are under 500px, tablets are often between
+500 and 1000px, and anything larger than 1000px is lakely to be a normal browser screen.*/
+
+/*Add media query: for smaller screens hide navigation menu and the profile image. Remove 
+margins (left and right) for the header. */
+
+@media screen and (max-width: 500px) {
+
+    .main-nav,
+    img {
+        display: none;
+    }
+
+    .main-header {
+        margin-left: 0%;
+        margin-right: 0%;
+    }
+}
+
+/*Add media query: for screens between 500px and 1000px change the margin for profile image. 
+Remove margins (left and right) for the header.*/
+
+@media screen and (min-width: 500px) and (max-width: 1000px) {
+    img {
+        margin-left: 3%;
+    }
+
+    .main-header {
+        margin-left: 0%;
+        margin-right: 0%;
+    }
 }

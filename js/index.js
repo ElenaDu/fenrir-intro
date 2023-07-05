@@ -13,10 +13,9 @@ let skills = [
     'JavaScript',
     'Quality Assurance',
     'Defect Management',
-    'Troubleshooting and Problem Solving',
-    'SQL',
-    'Python (Pandas, NumPy, Matplotlib)',
+    'Python (Pandas, NumPy)',
     'Git/GitHub',
+    'SQL',
     'Data Analysis',
     'Data Visualization'
 ];
@@ -27,6 +26,7 @@ console.log(skillsList);
 
 for (let i = 0; i < skills.length; i++) {
     let skill = document.createElement('li');
+    skill.className="skills_item";
 
     skill.innerText = skills[i];
     skillsList.appendChild(skill);
