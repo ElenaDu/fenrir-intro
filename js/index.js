@@ -4,6 +4,7 @@ let thisYear = today.getFullYear();
 let footer = document.querySelector('footer');
 let copyright = document.createElement('p');
 
+// Add a copyright notice to the footer
 copyright.innerHTML = `Alena Dudko &copy${thisYear}`;
 footer.appendChild(copyright);
 
@@ -69,4 +70,44 @@ messageForm.item(0).addEventListener('submit', (event) => {
 
     messageForm.item(0).reset();
 });
+
+//Create a new XMLHttpRequest object
+var githubRequest = new XMLHttpRequest();
+
+//Fetch GitHub Repositories
+githubRequest.open("GET", "https://api.github.com/users/ElenaDu/repos");
+githubRequest.send();
+
+//Handle Response from Server
+//// Add a "load" event listener on githubRequest object
+githubRequest.addEventListener("load", function(event) {
+    var repositories = JSON.parse(this.response);
+    console.log(repositories);
+
+//Display Repositories in List
+let projectSection = document.getElementById('projects');
+
+let projectList = projectSection.querySelector('ul');
+
+for (let i = 0; i < repositories.length; i++) {
+    let project = document.createElement('li');
+    let link = document.createElement("a");
+    
+    project.className="project_item";
+
+    //Add project name and link
+    link.href = repositories[i].html_url;
+    link.innerText = repositories[i].name;
+    project.appendChild(link);
+
+    /*Add project description
+    let description = document.createElement("p");
+    description.innerText = repositories[i].description;
+    project.appendChild(description); */
+
+    projectList.appendChild(project);
+
+}
+});
+
 

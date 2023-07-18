@@ -2,7 +2,7 @@
     box-sizing: border-box;
 }
 
-/*Change <body> layout as Flexbox container. */
+/*Set <body> layout as Flexbox container. */
 body {
     display: flex;
     flex-direction: column;
@@ -95,11 +95,22 @@ h2 {
     text-decoration: underline #e5a308;
 }
 
-/*Change the layout of the "Skills" section using Flexbox*/
+/*Change the layout of the "Project" and "Skills" sections using Flexbox*/
 .flex-container {
     display: flex;
     flex-wrap: wrap;
 }
+
+/*Add border to the each project item */
+.project_item {
+    margin: 1%;
+    padding: 1%;
+    background-color: #f3d898;
+    border: solid 2px #e5a308;
+    border-radius: 10px; /* Add rounded corners to the project item */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Add a shadow to the project item */
+}
+
 
 /*Add border to the each skill item */
 .skills_item {
@@ -118,6 +129,8 @@ img {
     margin-left: 7%;
     margin-top: auto;
     border: solid 3px #e5a308;
+    border-radius: 10px; /* Add rounded corners to the image*/
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Add a shadow to the image */
 
 }
 
