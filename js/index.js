@@ -27,7 +27,7 @@ console.log(skillsList);
 
 for (let i = 0; i < skills.length; i++) {
     let skill = document.createElement('li');
-    skill.className="skills_item";
+    skill.className = "skills_item";
 
     skill.innerText = skills[i];
     skillsList.appendChild(skill);
@@ -51,7 +51,7 @@ messageForm.item(0).addEventListener('submit', (event) => {
     let messageList = messageSection.querySelector('ul');
     let newMessage = document.createElement('li');
     newMessage.innerHTML = `<a href="mailto: ${email}">${name}</a> wrote: <span>${message}</span>&nbsp&nbsp`;
-    
+
 
 
     let removeButton = document.createElement('button');
@@ -71,43 +71,37 @@ messageForm.item(0).addEventListener('submit', (event) => {
     messageForm.item(0).reset();
 });
 
-//Create a new XMLHttpRequest object
-var githubRequest = new XMLHttpRequest();
 
-//Fetch GitHub Repositories
-githubRequest.open("GET", "https://api.github.com/users/ElenaDu/repos");
-githubRequest.send();
+//Using the Fetch API, create a "GET" request to the GitHub API url 
+fetch('https://api.github.com/users/ElenaDu/repos')
+    .then(response => response.json()) // Chain then method to parse the response as JSON data
+    .then(repositories => {
+        //Display Repositories in List
+        let projectSection = document.getElementById('projects');
 
-//Handle Response from Server
-//// Add a "load" event listener on githubRequest object
-githubRequest.addEventListener("load", function(event) {
-    var repositories = JSON.parse(this.response);
-    console.log(repositories);
+        let projectList = projectSection.querySelector('ul');
 
-//Display Repositories in List
-let projectSection = document.getElementById('projects');
+        for (let i = 0; i < repositories.length; i++) {
+            let project = document.createElement('li');
+            let link = document.createElement("a");
 
-let projectList = projectSection.querySelector('ul');
+            project.className = "project_item";
 
-for (let i = 0; i < repositories.length; i++) {
-    let project = document.createElement('li');
-    let link = document.createElement("a");
-    
-    project.className="project_item";
+            //Add project name and link
+            link.href = repositories[i].html_url;
+            link.innerText = repositories[i].name;
+            project.appendChild(link);
 
-    //Add project name and link
-    link.href = repositories[i].html_url;
-    link.innerText = repositories[i].name;
-    project.appendChild(link);
+            /*Add project description
+            let description = document.createElement("p");
+            description.innerText = repositories[i].description;
+            project.appendChild(description); */
 
-    /*Add project description
-    let description = document.createElement("p");
-    description.innerText = repositories[i].description;
-    project.appendChild(description); */
+            projectList.appendChild(project);
+        }
 
-    projectList.appendChild(project);
-
-}
-});
-
-
+    })
+    //Chain a catch() function to the fetch call to handle errors from the server
+    .catch(error => {
+        console.log('There was an error', error);
+    });
