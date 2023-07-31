@@ -2,23 +2,20 @@
     box-sizing: border-box;
 }
 
-/*Set <body> layout as Flexbox container. */
+/* Set <body> layout as Flexbox container. */
 body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
     font-family: 'Inter', sans-serif;
-
 }
 
-/*Change the layout of the Header using Flexbox. Add style and color.*/
+/* Change the layout of the Header using Flexbox. Add style and color. */
 .main-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: #b8e4f5;
-    margin-left: 7%;
-    margin-right: 7%;
     margin-bottom: auto;
     height: 60px;
 }
@@ -28,14 +25,13 @@ body {
     margin: 1%;
 }
 
-/*Using Flexbox change layout for the navigation menu*/
+/* Using Flexbox change layout for the navigation menu */
 .nav-items {
     display: flex;
     justify-content: flex-end;
-
 }
 
-/*Add margin to the navigation items*/
+/* Add margin to the navigation items */
 .nav-item {
     margin: 2%;
 }
@@ -54,11 +50,10 @@ a:hover {
     text-decoration: underline #e5a308;
 }
 
-/*add margin to the page */
+/* Add margin to the page */
 section {
     margin-left: 7%;
     margin-right: 7%;
-
 }
 
 h1 {
@@ -70,71 +65,66 @@ h2 {
     margin-bottom: 0.5%;
 }
 
-/*Add color and style to the welcome message*/
+/* Add color and style to the welcome message */
 #hello {
     color: #f3ab04;
     font-size: large;
 }
 
-
-/*Change the layout of the "Experience" section using Flexbox*/
+/* Change the layout of the "Experience" section using Flexbox */
 #ul_experience {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-
 }
 
-/*Add margin 0.5% to each experience item*/
+/* Add margin 0.5% to each experience item */
 .experience_item {
     margin-bottom: 1.5%;
 }
 
-/*Add underline decoration to the job positions*/
+/* Add underline decoration to the job positions */
 .experience_item span {
     text-decoration: underline #e5a308;
 }
 
-/*Change the layout of the "Project" and "Skills" sections using Flexbox*/
+/* Change the layout of the "Project" and "Skills" sections using Flexbox */
 .flex-container {
     display: flex;
     flex-wrap: wrap;
 }
 
-/*Add border to the each project item */
+/* Add border to the each project item */
 .project_item {
     margin: 1%;
     padding: 1%;
     background-color: #f3d898;
     border: solid 2px #e5a308;
-    border-radius: 10px; /* Add rounded corners to the project item */
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Add a shadow to the project item */
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
 
-
-/*Add border to the each skill item */
+/* Add border to the each skill item */
 .skills_item {
     border: solid 2px #e5a308;
     padding: 0.5%;
     margin: 0.5%;
-
-
 }
 
-/*Add style and set size to the profile picture*/
+/* Add style and set size to the profile picture */
 img {
-    width: 25%;
+    width: 250px;
     height: auto;
     float: right;
-    margin-left: 7%;
+    margin-left: 3%;
+    margin-right: 3%;
     margin-top: auto;
     border: solid 3px #e5a308;
-    border-radius: 10px; /* Add rounded corners to the image*/
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Add a shadow to the image */
-
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
 
-/*Change the layout of the "Leave a Message" form using Flexbox*/
+/* Change the layout of the "Leave a Message" form using Flexbox */
 .form-flex {
     display: flex;
     flex-direction: column;
@@ -147,7 +137,6 @@ label {
 .message-item {
     margin-top: 0.5%;
     padding: 0.5%;
-
 }
 
 input {
@@ -155,9 +144,8 @@ input {
     padding: 0.5%;
 }
 
-
 textarea {
-    width: 30%;
+    width: 40%;
     padding: 0.5%;
 }
 
@@ -167,41 +155,162 @@ button {
     border-color: #f6b213;
 }
 
-#footer {
-    background-color: #ffd166;
-    text-align: center;
-    margin-top: auto;
+button[type="submit"] {
+    margin-bottom: 3%;
 }
 
-/*For this project I assume that mobile phones are under 500px, tablets are often between
-500 and 1000px, and anything larger than 1000px is lakely to be a normal browser screen.*/
+/* Change the layout of the Messages section using Flexbox */
+#messages {
+    display: flex;
+    flex-direction: column;
+}
 
-/*Add media query: for smaller screens hide navigation menu and the profile image. Remove 
-margins (left and right) for the header. */
+/* Add border to the each message */
+#messages li {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 0.5%;
+    margin-bottom: 10px;
+    width: 70%;
+}
 
+#sender {
+    color: #f3ab04;
+}
+
+/* Change the layout of the footer container using Flexbox */
+#footer {
+    background-color: #ffd166;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    margin-top: auto;
+    padding: 0.5%;
+}
+
+/* Style the the social media icons */
+.social-icons {
+    display: flex;
+    align-items: center;
+    margin-right: 7%;
+}
+
+/* Add some space between the icons*/
+.social-icons a {
+    margin-left: 15%;
+    margin-right: 10%;
+}
+
+#footer .copyright {
+    margin: 0 auto;
+    /* Center the copyright info*/
+}
+
+.social-icons i {
+    font-size: 200%;
+    color: white;
+}
+
+
+/* For this project I assume that mobile phones are under 500px, tablets are often between
+500 and 1000px, and anything larger than 1000px is likely to be a normal browser screen. */
+
+/* Add media query: for smaller screens hide navigation menu and the profile image. */
 @media screen and (max-width: 500px) {
+
+    body {
+        font-size: 14px;
+    }
 
     .main-nav,
     img {
         display: none;
     }
 
-    .main-header {
-        margin-left: 0%;
-        margin-right: 0%;
+    section {
+        margin-left: 5%;
+        margin-right: 5%;
     }
+
+    h1 {
+        font-size: 24px;
+        padding-left: 5%;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    .message-item {
+        margin-top: 5px;
+        padding: 5px;
+    }
+
+    input,
+    textarea {
+        width: 100%;
+    }
+
+    button {
+        font-size: medium;
+    }
+
+    button[type="removeButton"] {
+        margin: 1%;
+    }
+
+    #messages li {
+        width: 100%;
+    }
+
+    .copyright {
+        margin: 0;
+    }
+
+    #footer {
+        padding: 5px;
+    }
+
+    .social-icons {
+        margin-right: 10px;
+    }
+
+    .social-icons a {
+        margin: 0 5px;
+    }
+
 }
 
-/*Add media query: for screens between 500px and 1000px change the margin for profile image. 
-Remove margins (left and right) for the header.*/
-
+/* Add media query: for screens between 500px and 1000px */
 @media screen and (min-width: 500px) and (max-width: 1000px) {
     img {
         margin-left: 3%;
     }
 
-    .main-header {
-        margin-left: 0%;
-        margin-right: 0%;
+    h1 {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    .message-item {
+        margin-top: 5px;
+        padding: 5px;
+    }
+
+    input,
+    textarea {
+        width: 70%;
+    }
+
+    button {
+        font-size: medium;
+    }
+
+    button[type="removeButton"] {
+        margin: 1%;
     }
 }
